@@ -1,18 +1,19 @@
+from pathlib import Path
+
 from setuptools import setup
 
-
-def readme():
-    with open('README.rst') as f:
-        return f.read()
+from cyxmltv import version
 
 
 setup(name='cyxmltv',
-      version='0.1',
+      version=version.VERSION,
       entry_points={
           'console_scripts': ['cyxmltv=main:run']
       },
-      description='Utility to create XML TV formatted document',
-      long_description=readme(),
+      description='Command line utility to create an XmlTv formatted EPG for '
+                  'cypriot channels',
+      long_description=Path('README.md').read_text(encoding='utf-8'),
+      long_description_content_type='text/markdown',
       author='Harry Papaxenopoulos',
       author_email='hpapaxen@gmail.com',
       packages=['cyxmltv'],
