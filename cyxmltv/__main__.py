@@ -1,7 +1,7 @@
 import argparse
 
-from cyxmltv import parser
-from cyxmltv import xmltv
+from .parser import parse_week
+from .xmltv import to_xml
 
 import logging
 
@@ -16,6 +16,7 @@ than that."""
 
 arg_parser = argparse.ArgumentParser(
     description=description,
+    prog='cyxmltv',
     formatter_class=argparse.RawTextHelpFormatter)
 arg_parser.add_argument('file', type=str,
                         help='The output file for the XMLTV formatted EPG')
@@ -24,13 +25,14 @@ arg_parser.add_argument('file', type=str,
 def config_log():
     logging.basicConfig(level=logging.INFO, format='%(message)s')
 
+
 def run():
 
     config_log()
 
     args = arg_parser.parse_args()
-    channels = parser.parse_week()
-    xmltv.to_xml(channels, args.file)
+    channels = parse_week()
+    to_xml(channels, args.file)
 
 
 if __name__ == '__main__':

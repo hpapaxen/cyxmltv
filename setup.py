@@ -8,7 +8,7 @@ from cyxmltv import version
 setup(name='cyxmltv',
       version=version.VERSION,
       entry_points={
-          'console_scripts': ['cyxmltv=main:run']
+          'console_scripts': ['cyxmltv=cyxmltv.__main__:run']
       },
       description='Command line utility to create an XmlTv formatted EPG for '
                   'cypriot channels',
