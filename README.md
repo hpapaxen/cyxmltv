@@ -14,4 +14,5 @@ operating the Plex DVR.
 ## How to run
 
 Simply run `cyxmltv <filename>`, where `<filename>` is the target file name 
-you want to use.
+you want to use. Then, you can use the aforementioned file in Plex's
+[DVR setup](https://support.plex.tv/articles/225877347-live-tv-dvr/)
